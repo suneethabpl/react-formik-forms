@@ -1,0 +1,51 @@
+.mright{
+    margin-right:159px;
+}
+
+.Profileform{
+    text-align:center;
+}
+
+.Profile-header{
+    min-height:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    /* font-size:calc(10px + 2vmin); */
+    font-size:40px;
+}
+
+.Controls{
+    border: 1px solid grey;
+    width:50vw;
+    text-align:left;
+    padding:10px;
+}
+
+.fontstyles{
+    /* font-size:calc(8px + 2vmin); */
+    font-size:35px;
+    margin: 0 2px;
+    width:50px;
+    background-color:white;
+    cursor:pointer;
+    padding:2px;
+}
+
+.Text{
+    font-size:30px;
+    /* font-size: calc(5px + 2vmin); */
+    width:50vw;
+    padding:10px;
+}
+
+.Selected{
+    background-color: grey;
+    color:white;
+    padding:6px 10px;
+}
+
+h2{
+    text-align: center;
+}

@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+.select-box--box {
+  width: 100%;
+  /* width: 180px; */
+  position: relative;
+  /* top: 28px; */
+  /* left: 50px; */
+  font-size: 14px;
+}
+
+.select-box--container {
+  position: absolute;
+  top: 26px;
+  height: 38px;
+  border: 1px solid #aaa;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 4px;
+}
+
+.select-box--selected-item {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  padding: 4px 12px;
+  vertical-align: middle;
+}
+
+.select-box--items div {
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  padding: 6px;
+  padding-left: 35px;
+}
+
+.select-box--items div.selected {
+  background-image: url("../Images/greencheckmark.jpg");
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: 2px 9px;
+}
+
+.select-box--arrow {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  background: #aaa;
+  right: 0;
+}
+
+.select-box--arrow-down {
+  position: absolute;
+  /* top:12px;
+    left:8px; */
+  /* top:174px;
+    left:239px; */
+  top: 12px;
+  right: 7px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #fff;
+}
+
+.select-box--arrow-up {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 10px solid #fff;
+}

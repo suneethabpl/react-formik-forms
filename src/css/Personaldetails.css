@@ -1,0 +1,58 @@
+.App {
+  width: 100%;
+  text-align: center;
+  margin: 20px;
+}
+
+label {
+  display: flex;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #4c4c4c;
+}
+
+.form-control1 input,
+.form-control1 textarea,
+.form-control1 select {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.columns {
+  display: flex;
+  justify-content: space-between;
+}
+.columns .form-control1 {
+  width: calc(50% - 10px);
+}
+.form-control1 {
+  margin-bottom: 30px;
+}
+.formclass {
+  width: 100%;
+  padding: 0 10px;
+}
+
+/* h1 {
+  font-size: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+h3 {
+  font-size: 15px;
+} */
+
+.errors {
+  color: red;
+  font-size: 80%;
+}
