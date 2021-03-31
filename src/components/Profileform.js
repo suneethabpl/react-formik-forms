@@ -2,7 +2,6 @@
 import React, { Component } from 'react'
 import '../css/Profileform.css'
 
-
 class Profileform extends Component {
     constructor() {
         super();
@@ -13,12 +12,9 @@ class Profileform extends Component {
             underlined: false
         };
 
-
         this.onBoldClick = this.onBoldClick.bind(this);
         this.onItalicsClick = this.onItalicsClick.bind(this);
         this.onUnderlineClick = this.onUnderlineClick.bind(this);
-
-
         this.inputRef = React.createRef();
         this.outputRef = React.createRef();
     }
@@ -64,7 +60,6 @@ class Profileform extends Component {
                 break;
         }
     }
-
     onInputChange() {
         const input = this.inputRef.current.value;
         const output = this.outputRef.current.innertext;
@@ -77,13 +72,11 @@ class Profileform extends Component {
         }
     }
 
-
     transferText() {
         const input = this.inputRef.current.value;
         const output = this.outputRef.current.innerHTML;
         let inputCounter = input.length - 1, outputCounter = output.length - 1, isTag = false;
         while (outputCounter > -1) {
-            // If the current character is '>', then we are in a HTML tag. Skip until we get to '<'.
             if (output[outputCounter] === ">") {
                 isTag = true;
                 outputCounter -= 1;
@@ -94,12 +87,11 @@ class Profileform extends Component {
                 outputCounter -= 1;
                 continue;
             }
-            // If inputCounter <= -1, then there is no more text to add to the output, so break.
             if (inputCounter <= -1) {
                 this.outputRef.current.innerHTML = this.outputRef.current.innerHTML.slice(outputCounter + 1);
                 break;
             }
-            // Otherwise, replace the text in the output with the corresponding text in the text area.
+    
             else {
                 let temp = this.outputRef.current.innerHTML;
                 temp = temp.slice(0, outputCounter) + input[inputCounter] + temp.slice(outputCounter + 1);
@@ -113,10 +105,7 @@ class Profileform extends Component {
 
     render() {
         return (
-            <form>
-                {/* <h1>profile form</h1> */}
-                {/* <h2>Profileform</h2> */}
-                
+            <form>           
                 <div className="Profile experienceform">
                     <header className="Profile-header">
                         <label className="mright">Profileform</label>
@@ -126,7 +115,6 @@ class Profileform extends Component {
                             <button className="fontstyles" onClick={this.onItalicsClick}><em>I</em></button>
                             <button className="fontstyles" onClick={this.onUnderlineClick}><u>U</u></button>
                         </span>
-                        {/* <textarea cols="84" rows="7" name="description" onChange={this.onChange} onBlur={this.onBlur} className="form-control mleft"></textarea> */}
                         <textarea rows="5" className="Text" ref={this.inputRef}     onInputChange={this.onInputChange} />
                         <button type="button" onClick={this.onSubmit} className="btnclass">save</button>
                     </header>

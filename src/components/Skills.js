@@ -10,27 +10,14 @@ class Skills extends Component {
 
     }
 
-    // constructor() {
-    //     super();
-    // this.state = {
-    //     jobtitle: '',
-    // }
-    // }
-
-
     onChange = (e) => {
         var fieldValue = (e.target.type == "checkbox") ? e.target.checked : e.target.value;
         var fieldName = e.target.name;
-
 
         this.setState({
             [fieldName]: fieldValue
         })
     }
-
-
-
-
 
     dropDown = () => {
         this.setState(prevState => ({
@@ -113,20 +100,11 @@ class Skills extends Component {
                     </div>
                 </form>
 
-
-
-
-
-
                 <div>
                     <form className="formclass1">
                         <button type="button" onClick={(e) => this.addAnotherWorkExperience(e)} className=" btnadd">Add another work experience</button>
                     </form>
                 </div>
-
-
-
-
             </div>
         )
     }

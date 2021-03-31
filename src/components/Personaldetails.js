@@ -39,7 +39,6 @@ class Personaldetails extends Component {
         var touched = Object.assign({}, this.state.touched)
 
         touched[fieldName] = true;
-        //     //touched.name=true
         this.setState({
             touched: touched
         })
@@ -96,11 +95,6 @@ class Personaldetails extends Component {
         var { touched } = this.state;
         return (
             <div className="experienceform">
-                {/* <section className="contacts-3 bg-clouds">
-                    <div className="container">
-                        <div className="row">
-
-                            <div className="col-sm-12 col-sm-offset-1"> */}
                 <h5>Personal Details</h5>
                 <form className="formclass">
                     <div className="form-control1 lmargin">
@@ -153,14 +147,7 @@ class Personaldetails extends Component {
                             <input type="text" name="postcode" onChange={this.onChange} onBlur={this.onBlur} placeholder='Enter postcode' className="form-control" />
                         </div>
                     </div>
-
-
                 </form>
-                {/* </div>
-                        </div>
-                    </div>
-
-                </section> */}
             </div>
 
         )

@@ -7,7 +7,6 @@ class Collapseworkexperience extends React.Component {
         super(props);
         this.state = {
             forms: [],
-
             items: [
                 {
                     id: 0,
@@ -23,21 +22,15 @@ class Collapseworkexperience extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-
-
-
     addAnotherWorkExperience() {
         this.setState({ forms: [...this.state.forms, ""] })
     }
-
 
     handleAddChange(e, index) {
         this.state.forms[index] = e.target.value;
         this.setState({ forms: this.state.forms })
 
     }
-
-
 
     handleClick(e, id) {
         const itemIndex = this.state.items.findIndex(i => i.id === id);
@@ -53,11 +46,8 @@ class Collapseworkexperience extends React.Component {
         this.setState({ items: items });
     }
 
-
-
     render() {
         const items = this.state.items;
-
         return (
             <div className="experienceform" >
                 <div className="accordion">
@@ -70,15 +60,9 @@ class Collapseworkexperience extends React.Component {
                             collapsed={items[item.id].isCollapsed}
                             hidden={items[item.id].isHidden}
                             expand={this.handleClick}
-
                         />
-
-
-
                     )}
                 </div>
-
-
 
                 {
                     this.state.forms.map((form, index) => {
@@ -94,8 +78,6 @@ class Collapseworkexperience extends React.Component {
 
                 }
              
-        
-                    
                         <form className="formclass1">
                             <button type="button" onClick={(e) => this.addAnotherWorkExperience(e)} className=" btnadd">Add another work experience</button>
                         </form>
@@ -107,9 +89,7 @@ class Collapseworkexperience extends React.Component {
 
 const AccordionItem = ({ ...props }) => {
     const { item, ariaExpanded, collapsed, hidden, expand } = props;
-
     return (
-
         <div>
             <h2 className="accordion-title">
                 <button
@@ -128,14 +108,6 @@ const AccordionItem = ({ ...props }) => {
 
             </div>
         </div>
-
-
-
-
-
     );
 }
-
-
-
 export default Collapseworkexperience
