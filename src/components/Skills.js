@@ -7,8 +7,13 @@ class Skills extends Component {
         showItems: false,
         selectedItem: this.props.items && this.props.items[0],
         ...this.props,
-
     }
+        // constructor() {
+    //     super();
+    // this.state = {
+    //     jobtitle: '',
+    // }
+    // }
 
     onChange = (e) => {
         var fieldValue = (e.target.type == "checkbox") ? e.target.checked : e.target.value;

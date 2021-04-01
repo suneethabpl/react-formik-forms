@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import '../css/Workexperience1.css';
 import WorkExperienceDetails from './WorkExperienceDetails';
-
+// import '../css/accordion.css'
 class Workexperience1Accordion extends Component {
     constructor(props) {
         super(props);
@@ -14,6 +14,7 @@ class Workexperience1Accordion extends Component {
             startDate: new Date(),
             endDate: new Date(),
             description: '',
+              // value: [],
             forms: [],
             accordions: this.props.data1
         }
@@ -25,7 +26,12 @@ class Workexperience1Accordion extends Component {
         });
     };
 
+ // handleClick = (currentForm) => {
+    //     console.log(currentForm);
+    // }
 
+
+    /*accordion*/
     onChange = (e) => {
         var fieldValue = (e.target.type == "checkbox") ? e.target.checked : e.target.value;
         var fieldName = e.target.name;
@@ -37,6 +43,8 @@ class Workexperience1Accordion extends Component {
     }
 
     componentDidMount() {
+            // const panel = document.querySelector(`.panel-1`);
+        // panel.style.maxHeight = panel.scrollHeight + "px";
         this.setPanelHeight(".panel-1", false);
     }
 
@@ -48,9 +56,11 @@ class Workexperience1Accordion extends Component {
             if (currentAccordion.id === accordion.id) {
                 accordion.state = "active";
                 this.setPanelHeight(`.panel-${accordion.id}`, false);
+                        // panel.style.maxHeight = panel.scrollHeight + "px";
             }
             else {
                 accordion.state = "inactive"
+                     // panel.style.maxHeight = null;
                 this.setPanelHeight(`.panel-${accordion.id}`, true);
             }
 
@@ -63,9 +73,13 @@ class Workexperience1Accordion extends Component {
 
 
     setPanelHeight(selector, close) {
+         // const panel = document.querySelector(`.panel-1`);
         const panel = document.querySelector(`${selector}`);
+           // panel.style.maxHeight = panel.scrollHeight + "px";
+        // panel.style.maxHeight=close === true? null:panel.scrollHeight + "px"
         panel.style.maxHeight = close === true ? null : panel.scrollHeight + "px";
     }
+      /*accordion*/
 
     addAnotherWorkExperience() {
         this.setState({ forms: [...this.state.forms, ""] })
@@ -74,6 +88,25 @@ class Workexperience1Accordion extends Component {
     handleInputChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
+ // displayForm() {
+    //     const { accordions } = this.state
+    //     let forms = [];
+    //     for (let i = 0; i < this.state.count; i++) {
+    //         // for (let i = 0; i < this.state.accordions.count; i++) {
+    //         forms.push(
+    //             <div key={i}>
+    //                 <WorkExperienceDetails value={this.state.value[i] || ''} />
+
+    //                 {/* <button className="accordion" onClick={() => this.handleClick(WorkExperienceDetails)}>{this.state.title}</button> */}
+    //                 {/* <button className="accordion" onClick={() => this.handleClick(accordion)}>{accordion.name}</button> */}
+    //                 {/* <h2 className="title">{this.state.title}</h2> */}
+    //             </div>
+
+    //         )
+
+    //     }
+    //     return forms || null;
+    // }
 
     handleAddChange(e, index) {
         this.state.forms[index] = e.target.value;
@@ -83,6 +116,7 @@ class Workexperience1Accordion extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
+          //Submit data to server
     }
 
     render() {
@@ -116,9 +150,50 @@ class Workexperience1Accordion extends Component {
                         })
 
                     }
+                     {/* <form className="formclass">
+                    <h1>Work experience</h1>
+                    <div className="columns">
+                        <div className="form-control">
+                            <label className="worklabel">Job Title</label>
+                            <input type="text" name="jobtitle" onChange={this.onChange} onBlur={this.onBlur} />
+                        </div>
+                        <div className="form-control">
+                            <label className=" worklabel">City</label>
+                            <input type="text" name="city" onChange={this.onChange} onBlur={this.onBlur} />
+                        </div>
+                    </div>
+                    <div className="form-control mleft">
+                        <label >Employer</label>
+                        <input type="text" name="employer" onChange={this.onChange} onBlur={this.onBlur} />
+                    </div>
+                    <div className="columns">
+                        <div className="form-control">
+                            <label className="h6">Start Date</label>
+                            <DatePicker
+                                selected={this.state.startDate}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+                        <div className="form-control">
+                            <label className="h6">End Date</label>
+                            <DatePicker
+                                selected={this.state.startDate}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+                    </div>
+                    <div className="form-control">
+                        <label className="h6">Description</label>
+                        <textarea cols="84" rows="7" name="description" onChange={this.onChange} onBlur={this.onBlur} className="form-control mleft"></textarea>
+                    </div>
+                    <button type="button" onClick={this.onSubmit} className="btnclass btnwork">Delete</button>
+                    <button type="button" onClick={this.onSubmit} className="btnclass btnwork">save</button>
+                </form>  */}
+
                     <div>
                         <h5>Work experience</h5>
                         <form className="formclass1">
+                               {/* {this.displayForm()} */}
                             <button type="button" onClick={(e) => this.addAnotherWorkExperience(e)} className=" btnadd">Add another work experience</button>
                         </form>
                     </div>
